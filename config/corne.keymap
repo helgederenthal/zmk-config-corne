@@ -10,15 +10,15 @@
 
 / {
         behaviors {
-            lt: layer-tap-by-hold-tap {
+            lt_impl: layer-tap-by-hold-tap {
                 compatible = "zmk,behavior-hold-tap";
-                label = "HOLD_FOR_LAYER_TAB_FOR_KEYPRESS";
+                label = "LAYER_TAP_BY_HOLD_TAP";
                 #binding-cells = <2>;
                 tapping-term-ms = <200>;
                 quick-tap-ms = <0>;
                 flavor = "tap-preferred";
                 bindings = <&mo>, <&kp>;
-            };
+
             hm: homerow_mods {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
@@ -50,7 +50,7 @@
    &trans   &kp Q       &kp W        &kp F         &kp P        &kp B      &kp J       &kp L         &kp U         &kp Y       &kp SEMI   &trans
    &trans   &bhm LGUI A &bhm LALT R  &bhm LSHIFT S &bhm LCTRL T &kp G      &kp M       &bhm RCTRL N  &bhm RSHIFT E &bhm RALT I &bhm RGUI O &trans
    &trans   &kp Z       &kp X        &kp C         &kp D        &kp V      &kp K       &kp H         &kp COMMA     &kp DOT     &kp FSLH   &trans
-                        &trans       &lt 1 RET     &lt 2 TAB    &lt 3 BSPC &lt 4 SPACE &trans
+                        &trans       &lt_impl 1 RET     &lt_impl 2 TAB    &lt_impl 3 BSPC &lt_impl 4 SPACE &trans
                         >;
                 };
 
