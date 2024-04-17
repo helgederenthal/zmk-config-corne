@@ -13,10 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +0 /nfs/data/notes/1_Tracking/Daily/2024/04.md
+badd +21 /nfs/data/notes/1_Tracking/Daily/2024/04.md
+badd +0 /nfs/data/notes/Development/Keyboard/Keyboard.md
 argglobal
 %argdel
-edit /nfs/data/notes/1_Tracking/Daily/2024/04.md
+edit /nfs/data/notes/Development/Keyboard/Keyboard.md
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright

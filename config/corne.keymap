@@ -9,6 +9,17 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+        behaviors {
+            hm: homerow_mods {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                tapping-term-ms = <150>;
+                quick-tap-ms = <0>;
+                flavor = "tap-preferred";
+                bindings = <&kp>, <&kp>;
+            };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -19,10 +30,10 @@
 // |      |  Z  |  X  |  C  |  D  |  V  |   |  K   |  H  |  ,  |  .  |  /  |      |
 //                    |     | ENT | TAB |   | BSPC | SPC |     |
                         bindings = <
-   &trans   &kp Q &kp W  &kp F   &kp P     &kp B    &kp J     &kp L  &kp U     &kp Y   &kp SEMI   &trans
-   &trans   &kp A &kp R  &kp S   &kp T     &kp G    &kp M     &kp N  &kp E     &kp I   &kp O      &trans
-   &trans   &kp Z &kp X  &kp C   &kp D     &kp V    &kp K     &kp H  &kp COMMA &kp DOT &kp FSLH   &trans
-                  &trans &kp RET &kp TAB   &kp BSPC &kp SPACE &trans
+   &trans   &kp Q      &kp W       &kp F        &kp P     &kp B    &kp J     &kp L        &kp U        &kp Y      &kp SEMI   &trans
+   &trans   &hm LGUI A &hm LALT R  &hm LSHIFT S &hm LCTRL &kp G    &kp M     &hm RCTRL N  &hm RSHIFT E &hm RALT I &hm RGUI O &trans
+   &trans   &kp Z      &kp X       &kp C        &kp D     &kp V    &kp K     &kp H        &kp COMMA    &kp DOT    &kp FSLH   &trans
+                       &trans      &kp RET      &kp TAB   &kp BSPC &kp SPACE &trans
                         >;
                 };
 
