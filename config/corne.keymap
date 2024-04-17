@@ -10,6 +10,15 @@
 
 / {
         behaviors {
+            lt: layer-tap-by-hold-tap {
+                compatible = "zmk,behavior-hold-tap";
+                label = "HOLD_FOR_LAYER_TAB_FOR_KEYPRESS";
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;
+                quick-tap-ms = <0>;
+                flavor = "tap-preferred";
+                bindings = <&mo>, <&kp>;
+            };
             hm: homerow_mods {
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
@@ -38,38 +47,67 @@
 // |      |  Z  |  X  |  C  |  D  |  V  |   |  K   |  H  |  ,  |  .  |  /  |      |
 //                    |     | ENT | TAB |   | BSPC | SPC |     |
                         bindings = <
-   &trans   &kp Q      &kp W       &kp F        &kp P       &kp B    &kp J     &kp L        &kp U        &kp Y      &kp SEMI   &trans
-   &trans   &bhm LGUI A &bhm LALT R  &bhm LSHIFT S &bhm LCTRL T &kp G    &kp M     &bhm RCTRL N  &bhm RSHIFT E &bhm RALT I &bhm RGUI O &trans
-   &trans   &kp Z      &kp X       &kp C        &kp D       &kp V    &kp K     &kp H        &kp COMMA    &kp DOT    &kp FSLH   &trans
-                       &trans      &kp RET      &kp TAB     &kp BSPC &kp SPACE &trans
+   &trans   &kp Q       &kp W        &kp F         &kp P        &kp B      &kp J       &kp L         &kp U         &kp Y       &kp SEMI   &trans
+   &trans   &bhm LGUI A &bhm LALT R  &bhm LSHIFT S &bhm LCTRL T &kp G      &kp M       &bhm RCTRL N  &bhm RSHIFT E &bhm RALT I &bhm RGUI O &trans
+   &trans   &kp Z       &kp X        &kp C         &kp D        &kp V      &kp K       &kp H         &kp COMMA     &kp DOT     &kp FSLH   &trans
+                        &trans       &lt 1 RET     &lt 2 TAB    &lt 3 BSPC &lt 4 SPACE &trans
                         >;
                 };
 
-                lower_layer {
+                sys_nav {
 // -----------------------------------------------------------------------------------------
-// |      |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
-// |      | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
 // |      |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |      |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      |     |     |     |     |     |   |     |     |     |     |     |      |
+//                    |     |     |     |   |     |     |     |
                         bindings = <
-   &trans   &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0   &trans
-   &trans   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans   &trans
-   &trans   &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans   &trans
-                                      &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
+   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
+   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
+                            &trans   &trans   &trans      &trans    &trans    &trans
                         >;
                 };
 
-                raise_layer {
+                numbers {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+// |      |     |     |     |     |     |   |  7  |  8  |  9  |  /  |  *  |      |
+// |      |     |     |     |     |     |   |  4  |  5  |  6  |  -  |  +  |      |
+// |      |     |     |     |     |     |   |  1  |  2  |  3  |  .  |  ,  |      |
+//                    |     |     |     |   |     |  0  |     |
                         bindings = <
-   &trans   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR   &trans
-   &trans   &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH   &trans
-   &trans   &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE   &trans
-                            &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &trans   &trans   &trans &trans   &trans   &trans      &kp N7    &kp N8   &kp N9   &kp FSLH  &kp STAR   &trans
+   &trans   &trans   &trans &trans   &trans   &trans      &kp N4    &kp N5   &kp N6   &kp MINUS &kp PLUS   &trans
+   &trans   &trans   &trans &trans   &trans   &trans      &kp N1    &kp N2   &kp N3   &kp DOT   &kp COMMA  &trans
+                            &trans   &trans   &trans      &trans    &kp N0   &trans
+                        >;
+                };
+
+                unused {
+// -----------------------------------------------------------------------------------------
+// |      |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      |     |     |     |     |     |   |     |     |     |     |     |      |
+//                    |     |     |     |   |     |     |     |
+                        bindings = <
+   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
+   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
+   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
+                            &trans   &trans   &trans      &trans    &trans    &trans
+                        >;
+                };
+
+                symbols {
+
+// -----------------------------------------------------------------------------------------
+// |      |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      |     |     |     |     |     |   |     |     |     |     |     |      |
+// |      |     |     |     |     |     |   |     |     |     |     |     |      |
+//                    |     |     |     |   |     |     |     |
+                        bindings = <
+   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
+   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
+   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
+                            &trans   &trans   &trans      &trans    &trans    &trans
                         >;
                 };
         };
