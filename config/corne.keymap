@@ -15,7 +15,7 @@
                 label = "LAYER_TAP_BY_HOLD_TAP";
                 #binding-cells = <2>;
                 tapping-term-ms = <200>;
-                quick-tap-ms = <0>;
+                quick-tap-ms = <200>;
                 flavor = "tap-preferred";
                 bindings = <&mo>, <&kp>;
             };
@@ -23,7 +23,7 @@
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 tapping-term-ms = <150>;
-                quick-tap-ms = <0>;
+                quick-tap-ms = <200>;
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
             };
@@ -31,7 +31,7 @@
                 compatible = "zmk,behavior-hold-tap";
                 #binding-cells = <2>;
                 tapping-term-ms = <200>;    // <---[[moderate duration]]
-                quick-tap-ms = <0>;
+                quick-tap-ms = <200>;
                 flavor = "balanced";
                 bindings = <&kp>, <&kp>;
             };
@@ -99,15 +99,15 @@
                 symbols {
 
 // -----------------------------------------------------------------------------------------
-// |      |     |     |     |     |     |   |     |     |     |     |     |      |
-// |      |     |     |     |     |     |   |     |     |     |     |     |      |
-// |      |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    |     |     |     |   |     |     |     |
+// |     |     |  @  |  {  |  }  |  %  |   |  |  |  \  |  +  |  &  |     |      |
+// |     |     | Esc |  (  |  )  |  *  |   |  ~  |  "  |  '  |  `  |     |      |
+// |     |     |  #  |  [  |  ]  |  $  |   |  =  |  !  |  -  |  _  |  ^  |      |
+//                   |     |     |     |   |     |     |     |
                         bindings = <
-   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
-   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
-   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
-                            &trans   &trans   &trans      &trans    &trans    &trans
+   &trans &trans &kp AT   &kp LBRC &kp RBRC &kp PRCNT   &kp PIPE2 &kp BSLH &kp PLUS  &kp AMPS  &trans     &trans
+   &trans &trans &kp ESC  &kp LPAR &kp RPAR &kp STAR    &kp TILDE &kp DQT  &kp SQT   &kp GRAVE &trans    &trans
+   &trans &trans &kp HASH &kp LBKT &kp RBKT &kp DLLR    &kp EQUAL &kp EXCL &kp MINUS &kp UNDER &kp CARET &trans
+                          &trans   &trans   &trans      &trans    &trans   &trans
                         >;
                 };
         };
