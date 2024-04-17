@@ -18,6 +18,14 @@
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
             };
+            bhm: balanced_homerow_mods {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;    // <---[[moderate duration]]
+                quick-tap-ms = <0>;
+                flavor = "balanced";
+                bindings = <&kp>, <&kp>;
+            };
         };
 
         keymap {
@@ -31,7 +39,7 @@
 //                    |     | ENT | TAB |   | BSPC | SPC |     |
                         bindings = <
    &trans   &kp Q      &kp W       &kp F        &kp P       &kp B    &kp J     &kp L        &kp U        &kp Y      &kp SEMI   &trans
-   &trans   &hm LGUI A &hm LALT R  &hm LSHIFT S &hm LCTRL T &kp G    &kp M     &hm RCTRL N  &hm RSHIFT E &hm RALT I &hm RGUI O &trans
+   &trans   &bhm LGUI A &bhm LALT R  &bhm LSHIFT S &bhm LCTRL T &kp G    &kp M     &bhm RCTRL N  &bhm RSHIFT E &bhm RALT I &bhm RGUI O &trans
    &trans   &kp Z      &kp X       &kp C        &kp D       &kp V    &kp K     &kp H        &kp COMMA    &kp DOT    &kp FSLH   &trans
                        &trans      &kp RET      &kp TAB     &kp BSPC &kp SPACE &trans
                         >;
