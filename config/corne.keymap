@@ -56,15 +56,15 @@
 
                 sys_nav {
 // -----------------------------------------------------------------------------------------
-// |      |     | Vol- | Vol+ | Mute |      |   | Home | PgDn | PgUp | End   | Ins |      |
-// |      |     | Prev | Next | Stop | Play |   | Left | Down | Up   | Right | Del |      |
-// |      |     |      |      |      |      |   |      |      |      |       |     |      |
-//                     |      |      |      |   |      |      |      |
+// |      |      | Vol- | Vol+ | Mute | BT_C |   | Home | PgDn | PgUp | End   | Ins |      |
+// |      |      | Prev | Next | Stop | Play |   | Left | Down | Up   | Right | Del |      |
+// |      | BT_5 | BT_4 | BT_3 | BT_2 | BT_1 |   |      |      |      |       |     |      |
+//                      |      |      |      |   |      |      |      |
                         bindings = <
-   &trans &trans &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE &trans             &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp INS &trans
-   &trans &trans &kp C_PREV    &kp C_NEXT   &kp C_STOP &kp C_PLAY_PAUSE   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp DEL &trans
-   &trans &trans &trans        &trans       &trans     &trans             &trans   &trans    &trans    &trans    &trans  &trans
-                               &trans       &trans     &trans             &trans   &trans    &trans
+   &trans &trans       &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE   &bt BT_CLR         &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp INS &trans
+   &trans &trans       &kp C_PREV    &kp C_NEXT   &kp C_STOP   &kp C_PLAY_PAUSE   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp DEL &trans
+   &trans &bt BT_SEL 4 &bt BT_SEL 3  &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0       &trans   &trans    &trans    &trans    &trans  &trans
+                                     &trans       &trans       &trans             &trans   &trans    &trans
                         >;
                 };
 
