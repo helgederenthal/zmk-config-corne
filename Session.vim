@@ -13,12 +13,11 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +7 config/corne.keymap
-badd +152 config/helper.h
+badd +46 config/corne.keymap
+badd +80 config/helper.h
 badd +4 config/corne.conf
 badd +1 build.yaml
 badd +1 config/keypos_42keys.h
-badd +0 config/german.dtsi
 argglobal
 %argdel
 edit config/corne.keymap
@@ -35,6 +34,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
+balt config/keypos_42keys.h
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -45,12 +45,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 7 - ((6 * winheight(0) + 24) / 48)
+let s:l = 1 - ((0 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 7
-normal! 019|
+keepjumps 1
+normal! 0
 if exists(':tcd') == 2 | tcd ~/git/zmk-config-corne | endif
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

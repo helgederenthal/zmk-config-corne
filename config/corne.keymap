@@ -4,7 +4,6 @@
 
 #include "./helper.h"
 #include "./keypos_42keys.h"
-#include "./german.dtsi"
 
 #define DEF 0  // layer shortcuts, must match order in which they are defined below
 #define NAV 1
@@ -42,11 +41,9 @@ ZMK_BEHAVIOR(cw_ss, tap_dance,
 
 #undef COMBO_TERM
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)(
-ZMK_COMBO(combo_copy,   &kp LC(C),  LB2 LB3, ALL)  // Ctrl + C, active on all layers
-ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)  // Ctrl + V, active on all layers
-
-// euro sign
-ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
+ZMK_COMBO(combo_copy,   &kp LC(C),  LB2 LB3, ALL)      // Ctrl + C, active on all layers
+ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)      // Ctrl + V, active on all layers
+ZMK_COMBO(combo_paste,  &kp ESC,    LT1 LT2 LT3, ALL)  // ESC, active on all layers
 
 ZMK_LAYER(Default,
      // ╭─────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────╮
@@ -86,11 +83,11 @@ ZMK_LAYER(Numbers,
 
 ZMK_LAYER(Symbols,
      // ╭─────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────╮
-          ___   &de_ae        &kp AT        &kp LBRC      &kp RBRC      &kp PRCNT         &kp PIPE2     &kp BSLH      &kp PLUS      &kp AMPS      &kp HASH      ___
+          ___   ___           &kp AT        &kp LBRC      &kp RBRC      &kp PRCNT         &kp PIPE2     &kp BSLH      &kp PLUS      &kp AMPS      &kp HASH      ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
-          ___   &de_oe        &kp ESC       &kp LPAR      &kp RPAR      &euro_sign        &kp TILDE     &kp DQT       &kp SQT       &kp GRAVE     &kp STAR      ___
+          ___   ___           &kp ESC       &kp LPAR      &kp RPAR      ___               &kp TILDE     &kp DQT       &kp SQT       &kp GRAVE     &kp STAR      ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
-          ___   &de_ue        &de_eszett    &kp LBKT      &kp RBKT      &kp DLLR          &kp EQUAL     &kp EXCL      &kp MINUS     &kp UNDER     &kp CARET     ___
+          ___   ___           ___           &kp LBKT      &kp RBKT      &kp DLLR          &kp EQUAL     &kp EXCL      &kp MINUS     &kp UNDER     &kp CARET     ___
      // ╰─────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────╯
                                             ___           ___           ___               ___           ___           ___
      //                                   ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
