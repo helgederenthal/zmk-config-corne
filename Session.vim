@@ -13,7 +13,7 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +46 config/corne.keymap
+badd +65 config/corne.keymap
 badd +80 config/helper.h
 badd +4 config/corne.conf
 badd +1 build.yaml
