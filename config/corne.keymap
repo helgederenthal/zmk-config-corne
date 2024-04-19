@@ -22,7 +22,7 @@ ZMK_BEHAVIOR(hrm, hold_tap,
 )
 
 ZMK_BEHAVIOR(hfl, hold_tap,
-    flavor = "tap-prefered";
+    flavor = "tap-preferred";
     tapping-term-ms = <280>;
     quick-tap-ms = <180>;
     bindings = <&mo>, <&kp>;

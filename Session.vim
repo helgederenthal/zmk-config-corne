@@ -15,10 +15,10 @@ else
 endif
 badd +7 config/corne.keymap
 badd +152 config/helper.h
-badd +1 config/german_alt.dtsi
 badd +4 config/corne.conf
 badd +1 build.yaml
 badd +1 config/keypos_42keys.h
+badd +0 config/german.dtsi
 argglobal
 %argdel
 edit config/corne.keymap
@@ -35,7 +35,6 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt config/german_alt.dtsi
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
