@@ -13,7 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +89 config/corne.keymap
+badd +24 config/corne.keymap
+badd +31 config/helper.h
+badd +31 config/keypos_36keys.h
+badd +5 config/german_alt.dtsi
 argglobal
 %argdel
 edit config/corne.keymap
@@ -30,6 +33,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
+balt config/german_alt.dtsi
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
