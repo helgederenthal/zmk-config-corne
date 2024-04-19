@@ -11,6 +11,8 @@
 #define NUM 2
 #define SYM 3
 
+#define ___ &trans
+
 // homerow mods
 ZMK_BEHAVIOR(hrm, hold_tap,
     flavor = "balanced";
