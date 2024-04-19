@@ -17,7 +17,7 @@
 ZMK_BEHAVIOR(hrm, hold_tap,
     flavor = "balanced";
     tapping-term-ms = <280>;
-    quick-tap-ms = <125>;
+    quick-tap-ms = <180>;
     bindings = <&kp>, <&kp>;
 )
 
@@ -41,19 +41,19 @@ ZMK_COMBO(combo_paste,  &kp LC(V),  LB1 LB2, ALL)  // Ctrl + V, active on all la
 // euro sign
 ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 
-ZMK_LAYER(default_layer,
+ZMK_LAYER(Default,
      // ╭─────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────╮
-          ___   &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y         &kp SQT       ___
+          ___   &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y         &kp SEMI      ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
           ___   &hrm LGUI A   &hrm LALT R   &hrm LSHFT S  &hrm LCTRL T  &kp G             &kp M         &hrm RCTRL N  &hrm RSHFT E  &hrm LALT I   &hrm RGUI O   ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
-          ___   &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp SEMI      ___
+          ___   &kp Z         &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp FSLH      ___
      // ╰─────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────╯
                                             ___           &lt NAV RET   &bs_del_num       &kp SPACE     &lt SYM TAB   &cw_ss
      //                                   ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
-ZMK_LAYER(nav_layer,
+ZMK_LAYER(Navigation,
      // ╭─────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────╮
           ___   ___           &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE    &bt BT_CLR        &kp HOME      &kp PG_DN     &kp PG_UP     &kp END       &kp INS       ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
@@ -65,7 +65,7 @@ ZMK_LAYER(nav_layer,
      //                                   ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
-ZMK_LAYER(num_layer,
+ZMK_LAYER(Numbers,
      // ╭─────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────╮
           ___   ___           ___           ___           ___           ___               &kp N7        &kp N8        &kp N9        &kp FSLH      &kp STAR      ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
@@ -77,7 +77,7 @@ ZMK_LAYER(num_layer,
      //                                   ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
-ZMK_LAYER(symbols_layer,
+ZMK_LAYER(Symbols,
      // ╭─────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────╮
           ___   &de_ae        &kp AT        &kp LBRC      &kp RBRC      &kp PRCNT         &kp PIPE2     &kp BSLH      &kp PLUS      &kp AMPS      &kp HASH      ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
@@ -89,107 +89,3 @@ ZMK_LAYER(symbols_layer,
      //                                   ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
-/// {
-//        behaviors {
-//            lt_impl: layer-tap-by-hold-tap {
-//                compatible = "zmk,behavior-hold-tap";
-//                label = "LAYER_TAP_BY_HOLD_TAP";
-//                #binding-cells = <2>;
-//                tapping-term-ms = <200>;
-//                quick-tap-ms = <200>;
-//                flavor = "tap-preferred";
-//                bindings = <&mo>, <&kp>;
-//            };
-//            hm: homerow_mods {
-//                compatible = "zmk,behavior-hold-tap";
-//                #binding-cells = <2>;
-//                tapping-term-ms = <150>;
-//                quick-tap-ms = <200>;
-//                flavor = "tap-preferred";
-//                bindings = <&kp>, <&kp>;
-//            };
-//            bhm: balanced_homerow_mods {
-//                compatible = "zmk,behavior-hold-tap";
-//                #binding-cells = <2>;
-//                tapping-term-ms = <200>;    // <---[[moderate duration]]
-//                quick-tap-ms = <200>;
-//                flavor = "balanced";
-//                bindings = <&kp>, <&kp>;
-//            };
-//        };
-//
-//        keymap {
-//                compatible = "zmk,keymap";
-//
-//                default_layer {
-//// -----------------------------------------------------------------------------------------
-//// |      |  Q  |  W  |  F  |  P  |  B  |   |  J   |  L  |  U  |  Y  |  ;  |      |
-//// |      |  A  |  R  |  S  |  T  |  G  |   |  M   |  N  |  E  |  I  |  O  |      |
-//// |      |  Z  |  X  |  C  |  D  |  V  |   |  K   |  H  |  ,  |  .  |  /  |      |
-////                    |     | ENT | TAB |   | BSPC | SPC |     |
-//                        bindings = <
-//   &trans   &kp Q       &kp W        &kp F         &kp P        &kp B      &kp J       &kp L         &kp U         &kp Y       &kp SEMI   &trans
-//   &trans   &bhm LGUI A &bhm LALT R  &bhm LSHIFT S &bhm LCTRL T &kp G      &kp M       &bhm RCTRL N  &bhm RSHIFT E &bhm RALT I &bhm RGUI O &trans
-//   &trans   &kp Z       &kp X        &kp C         &kp D        &kp V      &kp K       &kp H         &kp COMMA     &kp DOT     &kp FSLH   &trans
-//                        &trans       &lt_impl 1 RET     &lt_impl 2 TAB    &lt_impl 3 BSPC &lt_impl 4 SPACE &trans
-//                        >;
-//                };
-//
-//                sys_nav {
-//// -----------------------------------------------------------------------------------------
-//// |      |      | Vol- | Vol+ | Mute | BT_C |   | Home | PgDn | PgUp | End   | Ins |      |
-//// |      |      | Prev | Next | Stop | Play |   | Left | Down | Up   | Right | Del |      |
-//// |      | BT_5 | BT_4 | BT_3 | BT_2 | BT_1 |   |      |      |      |       |     |      |
-////                      |      |      |      |   |      |      |      |
-//                        bindings = <
-//   &trans &trans       &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE   &bt BT_CLR         &kp HOME &kp PG_DN &kp PG_UP &kp END   &kp INS &trans
-//   &trans &trans       &kp C_PREV    &kp C_NEXT   &kp C_STOP   &kp C_PLAY_PAUSE   &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &kp DEL &trans
-//   &trans &bt BT_SEL 4 &bt BT_SEL 3  &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0       &trans   &trans    &trans    &trans    &trans  &trans
-//                                     &trans       &trans       &trans             &trans   &trans    &trans
-//                        >;
-//                };
-//
-//                numbers {
-//// -----------------------------------------------------------------------------------------
-//// |      |     |     |     |     |     |   |  7  |  8  |  9  |  /  |  *  |      |
-//// |      |     |     |     |     |     |   |  4  |  5  |  6  |  -  |  +  |      |
-//// |      |     |     |     |     |     |   |  1  |  2  |  3  |  .  |  ,  |      |
-////                    |     |     |     |   |     |  0  |     |
-//                        bindings = <
-//   &trans   &trans   &trans &trans   &trans   &trans      &kp N7    &kp N8   &kp N9   &kp FSLH  &kp STAR   &trans
-//   &trans   &trans   &trans &trans   &trans   &trans      &kp N4    &kp N5   &kp N6   &kp MINUS &kp PLUS   &trans
-//   &trans   &trans   &trans &trans   &trans   &trans      &kp N1    &kp N2   &kp N3   &kp DOT   &kp COMMA  &trans
-//                            &trans   &trans   &trans      &trans    &kp N0   &trans
-//                        >;
-//                };
-//
-//                unused {
-//// -----------------------------------------------------------------------------------------
-//// |      |     |     |     |     |     |   |     |     |     |     |     |      |
-//// |      |     |     |     |     |     |   |     |     |     |     |     |      |
-//// |      |     |     |     |     |     |   |     |     |     |     |     |      |
-////                    |     |     |     |   |     |     |     |
-//                        bindings = <
-//   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
-//   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
-//   &trans   &trans   &trans &trans   &trans   &trans      &trans    &trans    &trans    &trans   &trans     &trans
-//                            &trans   &trans   &trans      &trans    &trans    &trans
-//                        >;
-//                };
-//
-//                symbols {
-//
-//// -----------------------------------------------------------------------------------------
-//// |     |     |  @  |  {  |  }  |  %  |   |  |  |  \  |  +  |  &  |     |      |
-//// |     |     | Esc |  (  |  )  |  *  |   |  ~  |  "  |  '  |  `  |     |      |
-//// |     |     |  #  |  [  |  ]  |  $  |   |  =  |  !  |  -  |  _  |  ^  |      |
-////                   |     |     |     |   |     |     |     |
-//                        bindings = <
-//   &trans &trans &kp AT   &kp LBRC &kp RBRC &kp PRCNT   &kp PIPE2 &kp BSLH &kp PLUS  &kp AMPS  &trans     &trans
-//   &trans &trans &kp ESC  &kp LPAR &kp RPAR &kp STAR    &kp TILDE &kp DQT  &kp SQT   &kp GRAVE &trans    &trans
-//   &trans &trans &kp HASH &kp LBKT &kp RBKT &kp DLLR    &kp EQUAL &kp EXCL &kp MINUS &kp UNDER &kp CARET &trans
-//                          &trans   &trans   &trans      &trans    &trans   &trans
-//                        >;
-//                };
-//        };
-//};
