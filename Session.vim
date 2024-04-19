@@ -13,7 +13,7 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +24 config/corne.keymap
+badd +36 config/corne.keymap
 badd +31 config/helper.h
 badd +31 config/keypos_36keys.h
 badd +5 config/german_alt.dtsi
@@ -33,7 +33,6 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt config/german_alt.dtsi
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -44,7 +43,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 17) / 34)
+let s:l = 1 - ((0 * winheight(0) + 42) / 85)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
