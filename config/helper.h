@@ -149,6 +149,7 @@
                 compatible = "zmk,behavior-mod-morph"; \
                 #binding-cells = <0>; \
                 bindings = <uc_binding>, <shifted_uc_binding>; \
+                quick-tap-ms = <180>;
                 mods = <(MOD_LSFT|MOD_RSFT)>; \
             }; \
         }; \
