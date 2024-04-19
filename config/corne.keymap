@@ -24,6 +24,7 @@ ZMK_BEHAVIOR(hrm, hold_tap,
 // tap: backspace | shift + tap: delete | hold: NUM layer
 ZMK_BEHAVIOR(bs_del_num, mod_morph,
     bindings = <&lt NUM BSPC>, <&kp DEL>;
+    quick-tap-ms = <180>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
