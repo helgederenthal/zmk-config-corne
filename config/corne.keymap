@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #include "./helper.h"
-#include "./keypos_36keys.h"
-#include "./german_alt.dtsi"
+#include "./keypos_42keys.h"
+#include "./german.dtsi"
 
 #define DEF 0  // layer shortcuts, must match order in which they are defined below
 #define NAV 1
@@ -21,10 +21,16 @@ ZMK_BEHAVIOR(hrm, hold_tap,
     bindings = <&kp>, <&kp>;
 )
 
+ZMK_BEHAVIOR(hfl, hold_tap,
+    flavor = "tap-prefered";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <180>;
+    bindings = <&mo>, <&kp>;
+)
+
 // tap: backspace | shift + tap: delete | hold: NUM layer
 ZMK_BEHAVIOR(bs_del_num, mod_morph,
-    bindings = <&lt NUM BSPC>, <&kp DEL>;
-    quick-tap-ms = <180>;
+    bindings = <&hfl NUM BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
