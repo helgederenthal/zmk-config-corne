@@ -20,14 +20,18 @@
 #define DE_RBKT RA(N9)      // ]
 #define DE_LBRC RA(N7)      // {
 #define DE_RBRC RA(N0)      // }
-#define DE_LT   GRAVE       // <
-#define DE_GT   LS(GRAVE)   // >
+#define DE_LT   NUBS        // <
+#define DE_GT   LS(NUBS)    // >
 #define DE_LPAR LS(N8)      // (
 #define DE_RPAR LS(N9)      // )
 #define DE_EURO RA(E)       // €
 #define DE_DLLR LS(N4)      // $
 #define DE_AMPS LS(N6)      // &
 #define DE_PRCT LS(N5)      // %
+
+#define DE_HASH NUHS        // #
+#define DE_TILD RA(RBKT)    // ~
+#define DE_EQL  LS(N0)      // =
 
 
 // Aliases
