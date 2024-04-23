@@ -13,11 +13,16 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
+<<<<<<< HEAD
 badd +2 config/corne.keymap
 badd +23 config/keypos_42keys.h
 badd +5 config/keymap_german.h
 badd +23 config/helper.h
 badd +1 config/corne.conf
+=======
+badd +44 config/corne.keymap
+badd +1 config/keypos_42keys.h
+>>>>>>> parent of 07586e9 (Default and Num Layer switched to German)
 argglobal
 %argdel
 edit config/corne.keymap
@@ -34,7 +39,7 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt config/keymap_german.h
+balt config/keypos_42keys.h
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
