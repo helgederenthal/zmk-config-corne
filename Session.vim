@@ -13,9 +13,9 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +6 config/corne.keymap
+badd +7 config/corne.keymap
 badd +20 config/keypos_42keys.h
-badd +1 config/keymap_german.h
+badd +19 config/keymap_german.h
 badd +23 config/helper.h
 badd +1 config/corne.conf
 argglobal
@@ -33,7 +33,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 9) / 18)
+let s:l = 1 - ((0 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
