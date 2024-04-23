@@ -13,11 +13,26 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +23 config/corne.keymap
-badd +17 config/keymap_german.h
+badd +2 config/corne.keymap
+badd +23 config/keypos_42keys.h
+badd +5 config/keymap_german.h
+badd +23 config/helper.h
+badd +1 config/corne.conf
 argglobal
 %argdel
 edit config/corne.keymap
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
 argglobal
 balt config/keymap_german.h
 setlocal fdm=manual
@@ -44,6 +59,8 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
