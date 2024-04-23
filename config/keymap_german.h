@@ -7,11 +7,11 @@
 
 #define DE_Y    Z           // Y
 #define DE_Z    Y           // Z
-#define DE_PLUS EQUAL       // +
+#define DE_PLUS RBKT        // +
 #define DE_MINS FSLH        // -
 
-#define DE_SLSH LS(N7)      // /
-#define DE_STAR LS(DE_PLUS) // *
+#define DE_FSLH LS(N7)      // /
+#define DE_STAR LS(RBKT)    // *
 
 #define DE_SS   MINUS       // ß
 
