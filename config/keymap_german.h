@@ -34,8 +34,8 @@
 #define DE_EQL  LS(N0)      // =
 #define DE_GRV  LS(EQUAL)   // `
 #define DE_DQT  LS(N2)      // "
-#define DE_SQT  LS(HASH)    // '
-#define DE_Ue   LBRC        // Ü
+#define DE_SQT  LS(NUHS)    // '
+#define DE_Ue   LBKT        // Ü
 #define DE_EXLM LS(N1)      // !
 #define DE_QUES LS(MINUS)   // ?
 #define DE_BSLH RA(MINUS)   // Backslash
