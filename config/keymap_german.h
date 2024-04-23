@@ -13,7 +13,22 @@
 #define DE_FSLH LS(N7)      // /
 #define DE_STAR LS(RBKT)    // *
 
+#define DE_AT   RA(Q)       // @
+#define DE_Ae   APOS        // Ä
 #define DE_SS   MINUS       // ß
+#define DE_LBKT RA(N8)      // [
+#define DE_RBKT RA(N9)      // ]
+#define DE_LBRC RA(N7)      // {
+#define DE_RBRC RA(N0)      // }
+#define DE_LT   GRAVE       // <
+#define DE_GT   LS(GRAVE)   // >
+#define DE_LPAR LS(N8)      // (
+#define DE_RPAR LS(N9)      // )
+#define DE_EURO RA(E)       // €
+#define DE_DLLR LS(N4)      // $
+#define DE_AMPS LS(N6)      // &
+#define DE_PRCT LS(N5)      // %
+
 
 // Aliases
 //#define DE_CIRC KC_GRV  // ^ (dead)

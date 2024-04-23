@@ -85,11 +85,11 @@ ZMK_LAYER(Numbers,
 
 ZMK_LAYER(Symbols,
      // ╭─────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────╮
-          ___   ___           &kp AT        &kp LBRC      &kp RBRC      &kp PRCNT         &kp PIPE2     &kp BSLH      &kp PLUS      &kp AMPS      &kp HASH      ___
+          ___   &kp DE_AT     &kp DE_LBKT   &kp DE_LBRC   &kp DE_RBRC   &kp DE_RBKT       &kp PIPE2     &kp BSLH      &kp PLUS      &kp AMPS      &kp HASH      ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
-          ___   ___           &kp ESC       &kp LPAR      &kp RPAR      ___               &kp TILDE     &kp DQT       &kp SQT       &kp GRAVE     &kp STAR      ___
+          ___   &kp DE_Ae     &kp DE_LT     &kp DE_LPAR   &kp DE_RPAR   &kp DE_GT         &kp TILDE     &kp DQT       &kp SQT       &kp GRAVE     &kp STAR      ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
-          ___   ___           ___           &kp LBKT      &kp RBKT      &kp DLLR          &kp EQUAL     &kp EXCL      &kp MINUS     &kp UNDER     &kp CARET     ___
+          ___   &kp DE_SS     &kp DE_EURO   &kp DE_DLLR   &kp DE_AMPS   &kp DE_PRCT       &kp EQUAL     &kp EXCL      &kp MINUS     &kp UNDER     &kp CARET     ___
      // ╰─────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────╯
                                             ___           ___           ___               ___           ___           ___
      //                                   ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
