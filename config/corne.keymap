@@ -4,6 +4,7 @@
 
 #include "./helper.h"
 #include "./keypos_42keys.h"
+#include "./keymap_german.h"
 
 #define DEF 0  // layer shortcuts, must match order in which they are defined below
 #define NAV 1
