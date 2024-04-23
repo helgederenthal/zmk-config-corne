@@ -8,7 +8,7 @@
 #define DE_Y    Z           // Y
 #define DE_Z    Y           // Z
 #define DE_PLUS EQUAL       // +
-#define DE_MINS FLSH        // -
+#define DE_MINS FSLH        // -
 
 #define DE_SLSH LS(N7)      // /
 #define DE_STAR LS(DE_PLUS) // *
