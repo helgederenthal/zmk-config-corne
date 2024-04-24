@@ -33,6 +33,7 @@
 #define DE_TILD RA(RBKT)    // ~
 #define DE_EQL  LS(N0)      // =
 #define DE_GRV  LS(EQUAL)   // `
+#define DE_ACUT EQUAL       // ´
 #define DE_DQT  LS(N2)      // "
 #define DE_SQT  LS(NUHS)    // '
 #define DE_Ue   LBKT        // Ü

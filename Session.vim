@@ -13,8 +13,8 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +77 config/corne.keymap
-badd +14 config/keymap_german.h
+badd +81 config/corne.keymap
+badd +39 config/keymap_german.h
 argglobal
 %argdel
 edit config/corne.keymap
