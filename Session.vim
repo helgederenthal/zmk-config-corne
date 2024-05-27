@@ -13,7 +13,7 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +81 config/corne.keymap
+badd +34 config/corne.keymap
 badd +39 config/keymap_german.h
 argglobal
 %argdel
@@ -30,11 +30,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 13) / 27)
+let s:l = 17 - ((16 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 17
 normal! 0
 if exists(':tcd') == 2 | tcd ~/git/zmk-config-corne | endif
 tabnext 1
