@@ -21,13 +21,13 @@
 // homerow mods
 ZMK_BEHAVIOR(hrm, hold_tap,
     flavor = "balanced";
-    tapping-term-ms = <280>;
+    tapping-term-ms = <200>;
     quick-tap-ms = <180>;
     bindings = <&kp>, <&kp>;
 )
 
 &lt {
-    tapping-term-ms = <280>;
+    tapping-term-ms = <200>;
     quick-tap-ms = <180>;
 };
 
@@ -83,7 +83,7 @@ ZMK_BEHAVIOR(sqt_dqt, mod_morph,
 
 ZMK_LAYER(Default,
      // ╭─────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────╮
-          ___   &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp DE_Y      &kp DE_PLUS   ___
+          ___   &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp DE_Y      &sqt_dqt      ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
           ___   &hrm LGUI A   &hrm LALT R   &hrm LCTRL S  &hrm LSHFT T  &kp G             &kp M         &hrm RSHFT N  &hrm RCTRL E  &hrm LALT I   &hrm RGUI O   ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
