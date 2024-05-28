@@ -13,14 +13,15 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +47 config/corne.keymap
+badd +46 config/corne.keymap
 badd +39 config/keymap_german.h
 badd +8 config/corne.conf
+badd +53 config/helper.h
 argglobal
 %argdel
 edit config/corne.keymap
 argglobal
-balt config/corne.conf
+balt config/helper.h
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}

@@ -45,6 +45,11 @@ ZMK_BEHAVIOR(hfl, hold_tap,
 //    bindings = <&caps_word>, <&sk LSHFT>;
 //)
 
+&lt {
+    tapping-term-ms = <280>;
+    quick-tap-ms = <180>;
+};
+
 #undef COMBO_TERM
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)(
 //ZMK_COMBO(combo_cut,    &kp LC(X),  LB3 LB4, ALL)      // Ctrl + X, active on all layers
