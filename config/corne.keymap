@@ -50,6 +50,30 @@ ZMK_BEHAVIOR(hrm, hold_tap,
 //    bindings = <&caps_word>, <&sk LSHFT>;
 //)
 
+// tap: , | shift + tap: <
+ZMK_BEHAVIOR(comma_lt, mod_morph,
+    bindings = <&kp COMMA>, <&kp DE_LT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// tap: . | shift + tap: >
+ZMK_BEHAVIOR(dot_gt, mod_morph,
+    bindings = <&kp DOT>, <&kp DE_GT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// tap: / | shift + tap: ?
+ZMK_BEHAVIOR(fslh_ques, mod_morph,
+    bindings = <&kp DE_FSLH>, <&kp DE_QUES>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// tap: ' | shift + tap: "
+ZMK_BEHAVIOR(sqt_dqt, mod_morph,
+    bindings = <&kp DE_SQT>, <&kp DE_DQT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
 #undef COMBO_TERM
 #define COMBO_TERM 40  // timeout of 40ms (default is 30ms if omitted)(
 //ZMK_COMBO(combo_cut,    &kp LC(X),  LB3 LB4, ALL)      // Ctrl + X, active on all layers
@@ -63,7 +87,7 @@ ZMK_LAYER(Default,
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
           ___   &hrm LGUI A   &hrm LALT R   &hrm LCTRL S  &hrm LSHFT T  &kp G             &kp M         &hrm RSHFT N  &hrm RCTRL E  &hrm LALT I   &hrm RGUI O   ___
      // ├─────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────┤
-          ___   &kp DE_Z      &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &kp COMMA     &kp DOT       &kp DE_MINS   ___
+          ___   &kp DE_Z      &kp X         &kp C         &kp D         &kp V             &kp K         &kp H         &comma_lt     &dot_gt       &fslh_ques    ___
      // ╰─────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────╯
                                             &lt MED ESC   &lt NAV SPACE &lt MOU TAB       &lt SYM RET   &lt NUM BSPC  &lt FUN DEL
      //                                   ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
