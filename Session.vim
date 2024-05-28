@@ -13,7 +13,7 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +52 config/corne.keymap
+badd +47 config/corne.keymap
 badd +39 config/keymap_german.h
 badd +8 config/corne.conf
 argglobal
@@ -51,6 +51,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 let g:this_session = v:this_session
 let g:this_obsession = v:this_session
 doautoall SessionLoadPost
